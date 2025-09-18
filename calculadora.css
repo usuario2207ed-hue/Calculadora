@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.calculator-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Menu de Navegação */
+.nav-menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #777;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
+}
+
+.nav-btn.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    font-weight: bold;
+}
+
+/* Painéis da Calculadora */
+.calculator-panel {
+    display: none;
+}
+
+.calculator-panel.active {
+    display: block;
+}
+
+/* Display da Calculadora */
+.display {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 2.5rem;
+    text-align: right;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Botões */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: #d0d0d0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn.operator { background-color: #ff9800; color: white; }
+.btn.operator:hover { background-color: #e68900; }
+.btn.equals { background-color: #4caf50; color: white; grid-row: span 2; }
+.btn.equals:hover { background-color: #45a049; }
+.btn.zero { grid-column: span 2; }
+.btn.clear, .btn.backspace { background-color: #f44336; color: white; }
+.btn.clear:hover, .btn.backspace:hover { background-color: #d32f2f; }
+
+/* Científica */
+.btn.scientific-btn { background-color: #607d8b; color: white; }
+.btn.scientific-btn:hover { background-color: #455a64; }
+
+/* Financeira e Conversores */
+h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+.financial-inputs, .converter-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.financial-inputs label, .converter-input span {
+    font-weight: bold;
+    color: #555;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.converter-input {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+.converter-input input, .converter-input select {
+    flex: 1;
+}
+.converter-result, .financial-result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.btn.calculate {
+    background-color: #4caf50;
+    color: white;
+    width: 100%;
+    padding: 12px;
+}
